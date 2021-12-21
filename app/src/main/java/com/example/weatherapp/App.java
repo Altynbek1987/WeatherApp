@@ -1,7 +1,6 @@
 package com.example.weatherapp;
 
 import android.app.Application;
-
 import com.example.weatherapp.data.OpenWeatherMap;
 
 public class App extends Application {

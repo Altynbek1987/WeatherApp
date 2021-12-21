@@ -1,11 +1,11 @@
 
 package com.example.weatherapp.models;
 
+import android.media.Image;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 import java.util.List;
-
 
 public class WeatherModel {
 
@@ -50,6 +50,16 @@ public class WeatherModel {
     @SerializedName("cod")
     @Expose
     private Integer cod;
+
+    public Integer getImage() {
+        return image;
+    }
+
+    public void setImage(Integer image) {
+        this.image = image;
+    }
+
+    private Integer image;
 
 
     public Coord getCoord() {

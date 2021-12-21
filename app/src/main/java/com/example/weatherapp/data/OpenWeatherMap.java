@@ -1,15 +1,7 @@
 package com.example.weatherapp.data;
 
-import android.accounts.NetworkErrorException;
-import android.util.AndroidException;
 import android.util.Log;
-import android.widget.Toast;
-
 import com.example.weatherapp.models.WeatherModel;
-
-import io.reactivex.Observable;
-import io.reactivex.functions.Consumer;
-import io.reactivex.schedulers.Schedulers;
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,7 +24,7 @@ public class OpenWeatherMap {
     private WeatherApi service = retrofit.create(WeatherApi.class);
 
     public void getWeatherData(final WeatherCallback callback){
-        service.getWeatherDataByCity("Бишкек", "c773fb0ce7a8107622734d8f0fe977ba","ру", "metric")
+        service.getWeatherDataByCity("Бишкек", "c773fb0ce7a8107622734d8f0fe977ba","ru", "metric")
                 .enqueue(new Callback<WeatherModel>() {
                     @Override
                     public void onResponse(Call<WeatherModel> call, Response<WeatherModel> response) {
@@ -51,7 +43,6 @@ public class OpenWeatherMap {
 
     public interface WeatherCallback{
         void onSuccess(WeatherModel weatherModel);
-
         void onFailure(Exception e);
     }
 
